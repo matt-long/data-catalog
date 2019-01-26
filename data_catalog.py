@@ -20,7 +20,7 @@ def set_catalog(catalog_name, check_exists=True):
     # TODO: this is not threadsafe...whole thing should be a class
     global active_database_file_name
     active_database_file_name = f'{libdir}/{catalog_name}.csv'
-    if not os.path.exists(active_database_file_name):
+    if not os.path.exists(active_database_file_name) and check_exists:
         raise OSError(f'cannot set catalog: "{catalog_name}" d.n.e.')
     print(f'active catalog: {catalog_name}')
 
