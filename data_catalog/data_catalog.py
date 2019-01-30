@@ -11,7 +11,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-libdir = './lib_data_catalog'
+dir_root = os.path.dirname(os.path.abspath(__file__))
+libdir = f'{dir_root}/lib_data_catalog'
 active_database_file_name = None
 
 
